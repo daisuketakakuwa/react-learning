@@ -1,0 +1,25 @@
+{
+  "include": ["src"],
+  "exclude": ["node_modules", "build"],
+  "compilerOptions": {
+    "types": ["vitest/globals"],
+    "target": "es6",
+    "lib": ["dom", "esnext"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "sourceMap": true,
+    "jsx": "react-jsx",
+    "preserveConstEnums": false,
+    "outDir": "./build",
+    "rootDir": "./src",
+    "baseUrl": "./",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "removeComments": false,
+    "noEmit": true,
+    "skipLibCheck": false,
+    "isolatedModules": false,
+    "strict": true
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "policies": [
+    {
+      "policyNo": "800000001",
+      "holderName": "田中大貴",
+      "gender": "男"
+    },
+    {
+      "policyNo": "800000002",
+      "holderName": "八村塁",
+      "gender": "男"
+    },
+    {
+      "policyNo": "800000003",
+      "holderName": "井口理",
+      "gender": "男"
+    }
+  ]
+}
