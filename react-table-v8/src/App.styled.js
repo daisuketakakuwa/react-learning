@@ -15,9 +15,9 @@ export const TdStyled = styled.td`
 `;
 
 export const PaginationButton = styled.button`
-  background-color: white;
+  background-color: ${({ $highlighted }) => ($highlighted ? 'blue' : 'white')};
+  color: ${({ $highlighted }) => ($highlighted ? 'white' : '#4169e1')};
   border: 1px solid silver;
-  color: #4169e1;
   cursor: pointer;
   width: 50px;
   padding: 5px 10px;

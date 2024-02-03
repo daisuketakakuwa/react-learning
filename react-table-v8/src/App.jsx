@@ -8,7 +8,8 @@ const App = () => {
   const [totalRecords, setTotalRecords] = useState(0);
 
   const actionPaginationFetch = (pageNumber) => {
-    const result = fetchData(pageNumber);
+    const pageSize = 3;
+    const result = fetchData(pageNumber, pageSize);
     setData(result.results);
     setTotalRecords(result.numberOfElements);
     setTotalPages(result.totalPages);

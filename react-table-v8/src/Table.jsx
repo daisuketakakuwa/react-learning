@@ -119,13 +119,13 @@ const Table = (props) => {
       </table>
 
       <div style={{ display: "flex" }}>
-        <PaginationButton disabled={true}>前へ</PaginationButton>
+        <PaginationButton $highlighted={+false} disabled={pageIndex === 0} onClick={() => table.setPageIndex(pageIndex - 1)}>前へ</PaginationButton>
         {paginationNumbers.map((i) => (
           <React.Fragment key={i}>
-            <PaginationButton onClick={() => table.setPageIndex(i - 1)}>{i}</PaginationButton>
+            <PaginationButton $highlighted={+(pageIndex + 1 === i)} onClick={() => table.setPageIndex(i - 1)}>{i}</PaginationButton>
           </React.Fragment>
         ))}
-        <PaginationButton onClick={() => alert(table.getPageCount())}>次へ</PaginationButton>
+        <PaginationButton $highlighted={+false} disabled={pageIndex + 1 === totalPages} onClick={() => table.setPageIndex(pageIndex + 1)}>次へ</PaginationButton>
       </div>
     </>
   );
