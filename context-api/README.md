@@ -5,6 +5,10 @@
 
 https://react.dev/learn/passing-data-deeply-with-context
 
+# HLD
+
+<img width="800px" src="https://github.com/daisuketakakuwa/react-learning/assets/66095465/f9357450-9b34-4b8b-8526-a7afeba4d9ba" />
+
 # 登場人物
 
 Context：情報を一元的に管理する**1Component**。Context を参照したい Component を子 Component に配置する。<br>
