@@ -1,8 +1,11 @@
 import React from 'react';
-import { compose, withState, withHandlers, lifecycle } from 'recompose';
+import PropTypes from "prop-types";
+import { compose, withState, withHandlers, lifecycle, setPropTypes } from 'recompose';
 
-// ★props に HOCで付与された関数が渡される。
-const FuncCompRecomposeCounter = ({ count, name, setName, incrementCount }) => (
+const FuncCompRecomposeCounter = ({
+    // HOCで付与されたprops
+    count, name, setName, incrementCount
+}) => (
     <div>
         <p>Count: {count}</p>
         <button onClick={incrementCount}>Increment</button>
@@ -27,10 +30,17 @@ export default compose(
     // ★useEffectに該当
     lifecycle({
         componentDidMount() {
-            // this.props経由で withState, withHandlers で生成した関数を参照
-            this.props.setCount(11);
+            // this.props経由で withState, withHandlers で生成した関数 や 親コンポーネントから渡したpropsを参照
+            this.props.setCount(this.props.defaultCount);
             this.props.incrementCount();
         }
-    })
+    }),
+    // prop-typesパッケージ で型チェック。
+    // - 定義した型に違反している場合は、BrowserのコンソールにWarningメッセージが出るのみ。
+    // - ★HOCだけでなく 親コンポーネントから渡すpropsの定義もここでできるってことか。
+    setPropTypes({
+        // countは「number」型である「必須」である。
+        count: PropTypes.number.isRequired,
+    }),
 
 )(FuncCompRecomposeCounter);

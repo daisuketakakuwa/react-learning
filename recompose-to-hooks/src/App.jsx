@@ -12,7 +12,7 @@ function App() {
       <br />
       <p>-------------------------------------------------</p>
       <p>Func Component × recompose</p>
-      <FuncCompRecomposeCounter />
+      <FuncCompRecomposeCounter defaultCount={100} />
       <br />
       <p>-------------------------------------------------</p>
       <p>Func Component × Hooks</p>
