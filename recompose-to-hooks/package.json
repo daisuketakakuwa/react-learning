@@ -1,0 +1,20 @@
+{
+  "name": "recompose-to-hooks",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "recompose": "^0.30.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^2.0.0",
+    "vite": "^3.0.0"
+  }
+}
