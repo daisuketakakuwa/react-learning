@@ -55,7 +55,6 @@ CSS
 - style-loader(0.20.3)
 - css-loader(0.28.11)
 - extract-text-webpack-plugin(4.0.0-beta.0)
-- postcss-loader(2.1.2)
 
 静的ファイル(画像)
 
@@ -83,14 +82,7 @@ index.html with all styles in \<style> tags<br>
 　 ↓<br>
 　 ↓ 【**extract-text-webpack-plugin**】 extract \<style> tags into CSS file<br>
 　 ↓<br>
-index.html with `<link rel>`
+index.html with `<link href="/app.css?dbf252bbfeb1e34fabcc" rel="stylesheet">`
 
 全ての style が index.html の\<head>内に定義されるのは読みづらい。<br>
 → CSS ファイルが別のファイルに切り出すのが`extract-text-webpack-plugin`
-
-<br>
-
-# TODO
-
-1. webpack.config.js の書き方を学ぶ
-2.

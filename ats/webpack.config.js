@@ -22,7 +22,9 @@ module.exports = (env, args) => ({
   devServer: {
     contentBase: path.join(__dirname, "public"),
     compress: true,
-    port: 9000,
+    port: 3000,
+    // SPAでの画面遷移を有効にする
+    historyApiFallback: true,
   },
 
   // module = Loaderの設定
