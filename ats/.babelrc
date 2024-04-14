@@ -1,0 +1,27 @@
+{
+  // 後ろから実行される
+  "presets": [
+    // Legacyブラウザ互換となるようPolyfillの適用
+    ["@babel/preset-env", { "targets": { "ie": 11 }, "modules": false }],
+    // JSX記法 -> JS へ変換
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    [
+      // babel-plugin-module-resolver
+      // 　import Component from "components/Components.js"
+      //   　↓変換
+      //   import Component from "./src/components/Components.js"
+      "module-resolver",
+      {
+        "root": "./src"
+      }
+    ],
+    // スプレッド構文 は ES2018導入
+    // @babel/preset-env で スプレッド構文も変換してくれるらしいが、
+    // バージョンによっては本プラグインを追加しないと変換してくれない
+    "@babel/plugin-proposal-object-rest-spread",
+    // 動的インポートを有効化
+    "@babel/plugin-syntax-dynamic-import"
+  ]
+}
