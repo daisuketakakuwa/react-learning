@@ -1,6 +1,6 @@
 # 技術スタック
 
-## =======アプリ関連=======
+## **=======アプリ関連=======**
 
 基盤
 
@@ -17,22 +17,51 @@ React
 Redux
 
 - redux(3.7.2)
-- redux-async-loader(1.2.3)
-- redux-effects-steps(1.0.1)
 - react-router-redux(4.0.8)
 - react-redux(5.0.7)
+- redux-async-loader(1.2.3) ※recruit-tech
+- redux-effects-steps(1.0.1) ※recruit-tech
 
 HOC
 
 - recompose(0.26.0)
 
-### HOC(Higher-Order Component) / 高階コンポーネント
+<br>
+
+### **HOC(Higher-Order Component) / 高階コンポーネント**
 
 - ...lift state into functional wrappers(**関数コンポーネントが対象**)
 - HOC として `withState`, `withStateHandlers`, `withHandlers`, `mapProps`, `lifecycle`, `setPropTypes` がある。
 - `compose`関数を使うことで、複数の HOC を組み合わせて１つの HOC にできる。
 
-## =======ビルド関連=======
+<br>
+
+### **Redux の ducks 記法**
+
+通常 - 全機能で reducer と actionCreator が １つのモジュールに集約されている。
+
+```
+reducers.js【全機能のreducerをここにswitch文で定義】
+actionCreators.js【全機能のactionCreatorsを定義】
+```
+
+ducks 記法の場合 - 機能ごとに １つのモジュール用意＆この中に reducer と actionCreator を定義
+
+```
+// ducks/events/index.js
+・eventsのactionCreators
+・eventsのreducers
+
+// ducks/policies/index.js
+・policiesのactionCreators
+・policiesのreducers
+```
+
+**各機能ごとに定義した reducers を、redux の combineReducers 関数で１つにまとめて、store に登録する。**
+
+<br><br>
+
+## **=======ビルド関連=======**
 
 Webpack
 
@@ -70,7 +99,7 @@ CSS
 
 - url-loader(1.0.1)
 
-## ======= webpack 関連 =======
+## **======= webpack 関連 =======**
 
 - webpack 単体は【JS】ファイルしか扱わない → **JS ファイル以外(CSS,画像) は loader に任せる。**
 - バンドル/ビルド に対して Plugin でカスタマイズする。
