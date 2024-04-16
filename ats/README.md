@@ -22,6 +22,16 @@ Redux
 - react-router-redux(4.0.8)
 - react-redux(5.0.7)
 
+HOC
+
+- recompose(0.26.0)
+
+### HOC(Higher-Order Component) / 高階コンポーネント
+
+- ...lift state into functional wrappers(**関数コンポーネントが対象**)
+- HOC として `withState`, `withStateHandlers`, `withHandlers`, `mapProps`, `lifecycle`, `setPropTypes` がある。
+- `compose`関数を使うことで、複数の HOC を組み合わせて１つの HOC にできる。
+
 ## =======ビルド関連=======
 
 Webpack

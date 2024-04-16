@@ -1,11 +1,11 @@
-import "components/App.scss";
+import "App.scss";
 import React from "react";
 import { browserHistory, IndexRoute, Route, Router } from "react-router";
-import AboutPage from "../pages/AboutPage";
-import EventDetailPage from "../pages/EventDetailPage";
-import EventLayout from "../pages/EventLayout";
-import HomePage from "../pages/HomePage";
-import Layout from "../pages/Layout";
+import AboutPage from "pages/about/AboutPage";
+import EventDetailPage from "pages/event/detail/EventDetailPage";
+import EventLayout from "pages/event/EventLayout";
+import HomePage from "pages/HomePage";
+import Layout from "pages/Layout";
 
 class App extends React.Component {
   render() {

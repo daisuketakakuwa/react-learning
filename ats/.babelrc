@@ -2,7 +2,7 @@
   // 後ろから実行される
   "presets": [
     // Legacyブラウザ互換となるようPolyfillの適用
-    ["@babel/preset-env", { "targets": { "ie": 11 }, "modules": false }],
+    ["@babel/preset-env", { "targets": { "ie": 11 }, "modules": false, "useBuiltIns": "entry" }],
     // JSX記法 -> JS へ変換
     "@babel/preset-react"
   ],
