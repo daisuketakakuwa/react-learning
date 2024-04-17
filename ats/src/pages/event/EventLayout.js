@@ -1,54 +1,39 @@
 import React from "react";
-import { Link, browserHistory } from "react-router";
-import { compose, lifecycle, withStateHandlers } from "recompose";
-
-// このComponentで、Event一覧取得APIを呼ぶ
-// ・Promiseを返す関数を用意
-// ・componentDidMountでコール
-// ・mapProp内で編集
-
-const fetchEvents = () => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      return resolve({
-        data: {
-          events: [
-            { id: 1, name: "Event1", date: "2024/01/01" },
-            { id: 2, name: "Event2", date: "2024/01/02" },
-            { id: 3, name: "Event3", date: "2024/01/03" },
-          ],
-        },
-      });
-    }, 1000);
-  });
-};
+import { connect } from "react-redux";
+import { Link } from "react-router";
+import { compose, lifecycle } from "recompose";
+import { fetchEvents, fetchEventsWithSteps } from "../../store/ducks/events";
 
 const enhancer = compose(
-  withStateHandlers(
-    { events: [] },
-    {
-      setEvents: (state) => (events) => ({
-        ...state,
-        events,
-      }),
-    }
+  // storeとconnectする
+  connect(
+    // args1 mapStateToProps
+    (state) => ({
+      events: state.events.events,
+      errorMessage: state.events.errorMessage,
+      isLoading: state.events.isLoading,
+    }),
+    // args2 mapDispatchToProps
+    (dispatch) => ({
+      fetchEvents: () => fetchEvents(dispatch),
+      fetchEventsWithSteps: () => dispatch(fetchEventsWithSteps()),
+    })
   ),
   lifecycle({
-    // Mount時にEvent一覧取得APIコール
     componentDidMount() {
-      fetchEvents().then((r) => {
-        this.props.setEvents(r.data.events);
-      });
+      // this.props.fetchEvents();
+      this.props.fetchEventsWithSteps();
     },
   })
 );
 
 const EventLayout = (props) => {
-  const { events, children } = props;
+  const { children, events, errorMessage, isLoading } = props;
 
   return (
     <div>
       <h1>Events</h1>
+      <h2>LOADING NOW? : {isLoading ? "YES" : "NO"}</h2>
       {events.map((e) => (
         <p key={e.id}>
           <Link to={`/event/${e.id}`}>{`${e.name}@${e.date}`}</Link>

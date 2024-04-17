@@ -25,8 +25,13 @@ module.exports = (env, args) => ({
     port: 3000,
     // SPAでの画面遷移を有効にする
     historyApiFallback: true,
+    // APIリクエストは流す
+    proxy: {
+      "/api": {
+        target: "http://localhost:8080",
+      },
+    },
   },
-
   // module = Loaderの設定
   // Loader = 「JavaScript以外のリソース（画像、CSS）」を処理する方法を定義する
   module: {

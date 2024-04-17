@@ -20,7 +20,13 @@ Redux
 - react-router-redux(4.0.8)
 - react-redux(5.0.7)
 - redux-async-loader(1.2.3) ※recruit-tech
-- redux-effects-steps(1.0.1) ※recruit-tech
+- redux-effects -steps(1.0.1) ※recruit-tech
+
+### Redux
+
+- react-redux -> 各 Component と Store を繋ぐ役割 (state と dispatch を連携)
+- react-effects-steps -> dispatch における Promise チェーンの整理
+- react-async-loader -> **★★★★★**
 
 HOC
 

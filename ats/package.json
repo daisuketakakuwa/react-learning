@@ -4,7 +4,9 @@
   "description": "",
   "scripts": {
     "build": "webpack-cli --mode production",
-    "dev": "webpack-dev-server --hot --config ./webpack.config.js"
+    "dev:react": "webpack-dev-server --hot --config ./webpack.config.js",
+    "dev:api-mock": "json-server --watch api-mock/db.json --routes api-mock/routes.json -p 8080 --delay [1000]",
+    "dev": "npm-run-all --parallel --print-label dev:react dev:api-mock"
   },
   "devDependencies": {
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.44",
@@ -16,6 +18,8 @@
     "css-loader": "^0.28.11",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "html-webpack-plugin": "^3.1.0",
+    "json-server": "^0.17.4",
+    "npm-run-all": "^4.1.5",
     "style-loader": "^0.20.3",
     "url-loader": "^1.0.1",
     "webpack": "^4.6.0",
@@ -23,9 +27,15 @@
     "webpack-dev-server": "^3.1.3"
   },
   "dependencies": {
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
+    "axios": "^1.6.8",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-redux": "^5.0.7",
     "react-router": "^3.2.0",
-    "recompose": "^0.26.0"
+    "react-router-redux": "^4.0.8",
+    "recompose": "^0.26.0",
+    "redux": "^3.7.2",
+    "redux-async-loader": "^1.2.4",
+    "redux-effects-steps": "^1.0.1"
   }
 }
