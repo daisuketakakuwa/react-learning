@@ -11,6 +11,15 @@
 APIクライアント ⇒ BFF【Controller ... 外部APIコール】⇒ 外部API
 ```
 
+以下のライブラリの使い方についてまとめていく。
+```
+react-query
+next-session
+@trpc/next
+@trpc/server
+@trpc/server/adapters/next
+```
+
 ↓ 各モジュールについて見ていく。
 
 ### **API クライアント**
@@ -122,7 +131,7 @@ export function AddTodo() {
 }
 ```
 
-#### **@trpc/next とは**
+### **@trpc/next とは**
 
 - RPC（Remote **Procedure** Call）とは
   - ✖ REST のように「/api/add?a=1&b=2」を叩く
@@ -142,5 +151,58 @@ export function AddTodo() {
 ② ①(AppRouter)を用いて、サーバ側で API 公開（`createNextApiHandler`関数）<br>
 ③ ①(AppRouter)を、クライアントコード側でも参照して、関数を呼び出す（`createTRPCNext`関数）
 
-<img width="800px" src="https://github.com/user-attachments/assets/b159daf5-0d69-4d16-a807-5b7153b39c4d" />
+<img width="800px" src="https://github.com/user-attachments/assets/6b155a33-259a-458b-83c6-3f1f7b8068ad" />
+
+<br/>
+
+### next-sessionとは
+👉`nextSession()`で、各リクエスト(`NextApiRequest`)のセッション情報を取得するための「関数」を生成する。
+```ts
+import nextSession from "next-session";
+
+export const getSession = nextSession({
+  cookie: {
+    secure: process.env.NODE_ENV === "production",
+    maxAge: 60 * 60 * 24, // 1日
+  },
+});
+```
+👉使い方１：**Pageコンポーネント(`getServerSideProps`)でセッション情報(ログイン済)を参照する**。
+```ts
+export default function ProfilePage({ user }: ProfileProps) {
+  return (
+    <div>
+      {user ? <h1>Hello, {user.name}</h1> : <h1>Not logged in</h1>}
+    </div>
+  );
+}
+
+// サーバ上(SSR)でセッション情報を取得し、propsにユーザー情報を渡す。
+export const getServerSideProps: GetServerSideProps<ProfileProps> = async ({ req, res }) => {
+  const session = await getSession(req, res);
+  return {
+    props: {
+      user: session.user || null,  // セッションに user があれば渡す
+    },
+  };
+};
+```
+👉使い方２：**APIRoutes/RouteHandlersで公開したエンドポイント内でセッション情報を参照する（`@trpc/server`のContext内で）**
+```ts
+// @trpc/serverの全Procedureから参照するContext生成部分で、セッションから情報を取得したものをContextに設定
+async function createContext({ req, res }: { req: NextApiRequest; res: NextApiResponse }) {
+  const session = await getSession(req, res);
+  return { req, res, session: session };
+}
+
+// @trpc/serverでAPIRoutes用エンドポイントを定義
+export default createNextApiHandler({
+  router: appRouter,
+  createContext, // リクエストごとにContext生成->セッション情報をnext-sessionで取ってくる
+  onError({ error }) {
+    console.error("tRPC error:", error);
+  },
+});
+```
+
 
