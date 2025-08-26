@@ -142,12 +142,5 @@ export function AddTodo() {
 ② ①(AppRouter)を用いて、サーバ側で API 公開（`createNextApiHandler`関数）<br>
 ③ ①(AppRouter)を、クライアントコード側でも参照して、関数を呼び出す（`createTRPCNext`関数）
 
-### **BFF 層**
+<img width="800px" src="https://github.com/user-attachments/assets/b159daf5-0d69-4d16-a807-5b7153b39c4d" />
 
-#### **BFF 層** > Controller 部分
-
-#### **BFF 層** > 外部 API コール
-
-### 外部 API
-
-Java/Kotlin などで実装。割愛。
