@@ -1,0 +1,26 @@
+.root {
+    position: relative;
+    min-width: 300px;
+    height: 160px;
+
+    border-radius: 20px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.textItem {
+    position: absolute;
+    inset: 50% auto auto 50%;
+    transform: translate(-50%, -50%);
+
+    width: 100%;
+}
+
+.primaryColor {
+    background: var(--color-blue-700);
+}
+
+.secondaryColor {
+    background: var(--color-neutral-white);
+    border: 3px solid var(--color-primary-main);
+}

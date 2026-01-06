@@ -1,0 +1,21 @@
+.titleWrapper {
+    margin-top: 30px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.linkMenuListWrapper {
+    margin-top: 50px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.logoutBtnWrapper {
+    margin-top: 50px;
+
+    display: flex;
+    justify-content: center;
+}

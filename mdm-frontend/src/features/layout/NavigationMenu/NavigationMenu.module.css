@@ -1,0 +1,12 @@
+.root {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    gap: 25px;
+
+    padding: 10px 0 20px;
+}
+
+.linkImg {
+    cursor: pointer;
+}

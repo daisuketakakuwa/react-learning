@@ -1,0 +1,31 @@
+.formWrapper {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+
+    gap: 5px;
+
+    /* paddingまで背景色白を適用したいので、content-boxにする */
+    box-sizing: content-box;
+    padding-top: 10px;
+    padding-bottom: 40px;
+
+    max-height: 92px; /** 3行分まで */
+
+    background-color: white;
+}
+
+.messageTextarea {
+    background-color: aliceblue;
+    border: 1px aliceblue solid;
+    border-radius: 8px;
+
+    width: min(85%, 500px);
+
+    min-height: 30px; /* 初期値の高さ */
+    max-height: 82px; /** 3行分まで */
+    overflow: hidden;
+    resize: none;
+    font-size: 16px;
+    padding: 5px;
+}

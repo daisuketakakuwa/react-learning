@@ -1,0 +1,97 @@
+/* :root -> CSS変数を全体で共有するため */
+:root {
+    /* CSSのカスタムプロパティ（--ではじまる名前）を定義する。var()で参照可能 */
+
+    /* primitive colors */
+    --color-gray-0: #ffffff;
+    --color-gray-50: #fafafa;
+    --color-gray-100: #f5f5f5;
+    --color-gray-200: #eeeeee;
+    --color-gray-300: #e0e0e0;
+    --color-gray-400: #bdbdbd;
+    --color-gray-500: #9e9e9e;
+    --color-gray-600: #757575;
+    --color-gray-700: #616161;
+    --color-gray-800: #424242;
+    --color-gray-900: #212121;
+
+    --color-blue-100: #d9e6ff;
+    --color-blue-200: #c5d7fb;
+    --color-blue-300: #9db7f9;
+    --color-blue-400: #7096f8;
+    --color-blue-500: #4979f5;
+    --color-blue-600: #3460fb;
+    --color-blue-700: #264af4;
+    --color-blue-800: #0031d8;
+    --color-blue-900: #0017c1;
+
+    --color-red-100: #ffe0e0;
+    --color-red-200: #ffb8b8;
+    --color-red-300: #ff8f8f;
+    --color-red-400: #ff6a6a;
+    --color-red-500: #ff4a4a;
+    --color-red-600: #e63939;
+    --color-red-700: #c52828;
+    --color-red-800: #a21e1e;
+    --color-red-900: #7a1515;
+
+    --color-yellow-100: #fff4cc;
+    --color-yellow-200: #ffe799;
+    --color-yellow-300: #ffda66;
+    --color-yellow-400: #ffcd33;
+    --color-yellow-500: #ffc107;
+    --color-yellow-600: #e6ad00;
+    --color-yellow-700: #cc9900;
+    --color-yellow-800: #b38600;
+    --color-yellow-900: #806000;
+
+    --color-green-100: #e6f4ea;
+    --color-green-200: #cce8d5;
+    --color-green-300: #9fd5b3;
+    --color-green-400: #6fc18f;
+    --color-green-500: #3fa66b;
+    --color-green-600: #2f8f59;
+    --color-green-700: #247a4b;
+    --color-green-800: #1a653d;
+    --color-green-900: #124f30;
+
+    /* neutral colorsを定義する */
+    --color-neutral-white: var(--color-gray-0);
+
+    /* key colors */
+    --color-primary-main: var(--color-blue-900);
+    --color-secondary-main: var(--color-blue-500);
+    --color-tertiary-main: var(--color-gray-200);
+
+    /* semantic colors */
+    --color-text-white: var(--color-gray-0);
+    --color-text-gray: var(--color-gray-700);
+    --color-text-black: var(--color-gray-900);
+    --color-text-error: var(--color-red-600);
+    --color-text-success: var(--color-green-500);
+    --color-border-gray: var(--color-gray-400);
+    /* 選択中 */
+    --color-state-selected-bg: var(--color-blue-100);
+    --color-state-selected-border: var(--color-secondary-main);
+    --color-state-selected-text: var(--color-text-black);
+
+    /* font-size tokens */
+    --font-size-base: 16px; /* デフォルト */
+    --font-size-sm: 14px; /* 小サイズ */
+    --font-size-md: 16px; /* 中サイズ（baseと同じ） */
+    --font-size-lg: 18px; /* 大サイズ */
+    --font-size-xl: 20px; /* XLサイズ */
+    --font-size-2xl: 24px; /* 2XLサイズ */
+    --font-size-3xl: 30px; /* 3XLサイズ */
+
+    /* font-weight tokens */
+    --font-weight-thin: 100;
+    --font-weight-extra-light: 200;
+    --font-weight-light: 300;
+    --font-weight-normal: 400; /* 基本の本文 */
+    --font-weight-medium: 500; /* 少し強調したい時 */
+    --font-weight-semibold: 600; /* タイトル、ラベルに最適 */
+    --font-weight-bold: 700; /* 見出し */
+    --font-weight-extra-bold: 800;
+    --font-weight-black: 900;
+}

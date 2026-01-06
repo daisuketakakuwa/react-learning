@@ -1,0 +1,13 @@
+.titleWrapper {
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+.formTextInputWrapper {
+    width: calc(100% - 10px);
+}
+
+.btnWrapper {
+    text-align: center;
+    margin-top: 30px;
+}

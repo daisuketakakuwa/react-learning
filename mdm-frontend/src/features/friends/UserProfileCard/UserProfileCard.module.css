@@ -1,0 +1,66 @@
+.root {
+    padding: 0 5px;
+    border: 4px solid var(--color-text-black);
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    gap: 3%;
+
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.profileImg {
+    width: 60px;
+}
+
+.profileMainContentArea {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    width: 90%;
+    padding: 15px 0;
+}
+
+.profileNameLine {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.profileField {
+    width: 95%;
+    overflow-wrap: break-word;
+    white-space: pre-line;
+}
+
+.freeCommentLine {
+    padding-top: 7px;
+    margin-top: 7px;
+    border-top: 1px solid black;
+}
+
+.editNameIcon {
+    cursor: pointer;
+}
+
+.noMessage {
+    display: none;
+}
+
+.unreadBadge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    /* inline-flex を使うと、内容によってwidthが変動する -> min-widthを指定する */
+    min-width: 32px;
+    height: 32px;
+
+    border-radius: 999px;
+    background: var(--color-red-500);
+    color: var(--color-text-white);
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}

@@ -1,0 +1,24 @@
+.showQrTitleWrapper {
+    margin-top: 30px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.qrDisplaySection {
+    margin-top: 20px;
+}
+
+.scanQrTitleWrapper {
+    margin-top: 100px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.qrScannerWrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 200px;
+}

@@ -1,0 +1,35 @@
+.root {
+    margin-bottom: 100px;
+}
+
+.headerNavigationLinkArea {
+    display: flex;
+    gap: 5px;
+
+    margin-top: 20px;
+}
+
+.underlinedNavLink {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+}
+
+.addHospitalWrapper {
+    margin-top: 50px;
+}
+
+.hospitalListTitleWrapper {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 50px;
+}
+
+.hospitalListWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    margin-top: 30px;
+}

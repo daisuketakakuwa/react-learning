@@ -1,0 +1,17 @@
+.itemTitle {
+    color: gray;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+.textInputWrapper {
+    width: calc(100% - 10px);
+}
+
+.buttonWrapper {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 30px;
+}

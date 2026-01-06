@@ -1,0 +1,58 @@
+.root {
+    margin-bottom: 100px;
+}
+
+.headerNavigationLinkArea {
+    margin-top: 20px;
+}
+
+.underlinedNavLink {
+    display: inline-block;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+}
+
+.linkItem {
+    margin-left: 5px;
+}
+
+.titleWrapper {
+    margin: 80px 0 5px 0;
+    border-bottom: 0.5px solid black;
+}
+
+.zeroUserTextWrapper {
+    margin-top: 30px;
+}
+
+.textCenter {
+    text-align: center;
+}
+
+.valueAndEditBtnLine {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    margin-top: 10px;
+}
+
+.currentValueItem {
+    background-color: var(--color-neutral-white);
+
+    padding: 5px 10px;
+    border: 0px;
+
+    width: 60%;
+
+    font-weight: bold;
+    overflow-wrap: break-word;
+}
+
+.buttonWrapper {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 30px;
+}

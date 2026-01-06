@@ -1,0 +1,82 @@
+/* ===== page ===== */
+
+.page {
+    padding-bottom: 200px;
+}
+
+/* ===== titles / text blocks ===== */
+
+.pageTitleWrapper {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 30px;
+}
+
+.qrTitleWrapper {
+    margin-top: 45px;
+    text-align: center;
+}
+
+.qrDescriptionWrapper {
+    margin-top: 20px;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.readQrWrapper {
+    margin-top: 15px;
+}
+
+.hospitalSectionTitleWrapper {
+    margin-top: 75px;
+    text-align: center;
+}
+
+.hospitalDescriptionWrapper {
+    margin-top: 20px;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.emptyHospitalWrapper {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* ===== hospital list ===== */
+
+.hospitalListWrapper {
+    margin-top: 20px;
+}
+
+.hospitalItemWrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.hospitalIcon {
+    border: 2px solid var(--color-text-black);
+    background-color: var(--color-text-white);
+    color: black;
+
+    border-radius: 10px;
+    margin: 10px 0;
+    padding: 5px 20px;
+
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+}
+
+.hospitalIconSelected {
+    border-color: var(--color-state-selected-border);
+    background-color: var(--color-state-selected-bg);
+}
+
+.leaveButtonWrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}

@@ -1,0 +1,22 @@
+.titleWrapper {
+    margin-top: 30px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.emptyMessageWrapper {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.listWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.bottomSpacer {
+    height: 200px;
+}

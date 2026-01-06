@@ -1,0 +1,22 @@
+body {
+    background-color: #f0f0f0;
+    font-family: sans-serif;
+    /* 
+        PC -> 500px
+        SP -> 90vw
+     */
+    width: min(90vw, 500px);
+    /* body直下のdiv要素を 横に中央寄せする */
+    margin: 0 auto;
+}
+
+/* 
+  iOSのSafariで<input>や<textarea>にフォーカスしたときに自動的に拡大（ズーム）される現象がある。
+  フォーム要素のフォントサイズが 16px未満 になっていると発生するため防ぐ。
+*/
+input[type='text'] {
+    font-size: var(--font-size-base);
+}
+input[type='password'] {
+    font-size: var(--font-size-base);
+}

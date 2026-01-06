@@ -1,0 +1,82 @@
+/* ===== page layout ===== */
+.titleWrapper {
+    margin-top: 30px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.logoutButtonWrapper {
+    margin-top: 40px;
+}
+
+.divider {
+    margin-top: 40px;
+    border-top: 3px solid var(--color-border-gray);
+}
+
+.formWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 150px;
+}
+
+.textInputWrapper {
+    width: calc(100% - 10px);
+}
+
+/* ===== header ===== */
+
+.formHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+/* ===== form fields ===== */
+
+.fieldBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.fieldLabel {
+    color: var(--color-text-gray);
+    font-weight: bold;
+}
+
+/* 表示エリア*/
+.fieldDispValueWrapper {
+    padding: 3px 10px;
+    display: flex;
+    align-items: center;
+    /* 改行コードを反映させる */
+    white-space: pre-wrap;
+}
+
+/* 表示テキスト */
+.fieldText {
+    font-weight: bold;
+}
+
+/* エラーメッセージ */
+.errorMessageWrapper {
+    padding: 0 10px;
+}
+.showErrorMessage {
+    display: block;
+}
+.hideErrorMessage {
+    display: none;
+}
+
+/* ===== action ===== */
+
+.updateButtonWrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
